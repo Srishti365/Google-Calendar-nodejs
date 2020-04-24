@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>add event Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css" media="screen">
+        .t1 {
+            font-weight: bold;
+            font-size: 1.5em
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row" style="margin:3% 0% 10% 30%">
+        <div class="col-md-12">
+            <h1 style="font-weight: bold">ADD EVENT TO CALENDAR</h1>
+
+            <br><br>
+        </div>
+        <div class="col-md-6">
+            <form action="http://localhost:9000/addnew/" method="POST" name="form1">
+
+                <span class="t1">Title: </span><input type="text" name="summary" class="form-control" required /><br>
+                <span class="t1">Location:</span><input type="text" name="location" class="form-control" required /><br>
+                <span class="t1">Description:</span><input type="text" name="description" class="form-control"
+                    required /><br>
+                <span class="t1">Email:</span><input type="email" name="email" class="form-control" required><br>
+                <span class="t1">Start Date:</span><input type="date" name="startdate" class="form-control"
+                    required><br>
+                <span class="t1">Start Time:</span><input type="time" name="starttime" class="form-control"
+                    required><br>
+                <span class="t1">End Date:</span><input type="date" name="enddate" class="form-control" required><br>
+                <span class="t1">End Time</span><input type="time" name="endtime" class="form-control" required><br><br>
+
+                <input type="submit" value="Add Event">
+            </form>
+            <br>
+            <br>
+            <form action="http://localhost:9000/" method="GET" name="form1">
+                <input type="submit" value="Return to main page">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

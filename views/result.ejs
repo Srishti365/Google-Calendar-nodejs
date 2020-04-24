@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>result Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style type="text/css" media="screen">
+        .t0 {
+            font-weight: bold;
+            font-size: 2.5em;
+
+
+        }
+
+        .te {
+            font-weight: bold;
+            font-size: 2em;
+
+        }
+
+        .t1 {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .t2 {
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row" style="margin: 10%">
+        <div class="col-sm-6">
+            <div class="row title">
+                <h2 class="t0">List of Upcoming Events</h2>
+            </div>
+            <p></p>
+
+            <ul>
+                <% if(allenv.length > 0){ %>
+                <% for (var i = 0; i < allenv.length; i++) { %>
+                <li class="timeline-yellow">
+                    <u>
+                        <h2 class="te">Event <%= i+1 %></h2>
+                    </u>
+                    <span class="t1">Title :</span></h3>
+                    <span class="t2"><%= allenv[i].summary %></span>
+                    <br>
+                    <span class="t1">Description :</span></h3>
+                    <span class="t2"><%= allenv[i].description %></span>
+                    <br>
+                    <span class="t1">Organiser :</span></h3>
+                    <span class="t2"><%= allenv[i].organiser.email %></span>
+                    <br>
+                    <span class="t1">Attendees :</span></h3>
+                    <span class="t2"><%= allenv[i].attendees %></span>
+                    <br>
+                    <span class="t1">Start :</span></h3>
+                    <span class="t2"><%= allenv[i].start %></span>
+                    <br>
+                    <span class="t1">End :</span></h3>
+                    <span class="t2"><%= allenv[i].end %></span>
+                    <br><br>
+
+                </li>
+                <% } %>
+                <% } else{ %>
+                <h2 class="t1">No Upcoming Events <br>in your Calendar</h2>
+                <% } %>
+
+
+            </ul>
+        </div>
+        <div class="col-sm-6" style="margin-top: 10%">
+            <form action="http://localhost:9000/add/" method="GET" name="form1">
+                <input type="submit" value="Add an Event to Calendar">
+            </form>
+            <br>
+            <form action="http://localhost:9000/" method="GET" name="form1">
+                <input type="submit" value="View Calendar by a different Account">
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
